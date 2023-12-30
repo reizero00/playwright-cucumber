@@ -6,7 +6,10 @@
         "paths": [
             "features"
         ],
-        "require": ["features/step_definitions"],
+        "require": [
+            "features/step_definitions/*.ts",
+            "features/support/hooks.ts"
+        ],
         "requireModule": [
             "ts-node/register"
         ]

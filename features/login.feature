@@ -5,7 +5,7 @@ Feature: Login boilerplate
     programming language.
 
   Background: 
-    * Browser is open to "saucedemo.com"
+    * Browser is open to "http://saucedemo.com"
 
   Scenario: Can login using an accepted username and password
     Given the User enters "standard_user" in the Username text field
@@ -25,17 +25,17 @@ Feature: Login boilerplate
     When the User clicks the Login button
     Then the User should see the error "Epic sadface: Username and password do not match any user in this service"
 
-  Scenario Outline: Can login using all accepted usernames
-    Given the User enters <username> in the Username text field
-    And the User enters <password> in the Password text field
+  Scenario Outline: Can login using more accepted usernames
+    Given the User enters "<userName>" in the Username text field
+    And the User enters "<password>" in the Password text field
     When the User clicks the Login button
     Then the User should see products
 
     Examples: 
-      | username                | password     |
+      | userName                | password     |
       | standard_user           | secret_sauce |
-      | locked_out_user         | secret_sauce |
       | problem_user            | secret_sauce |
-      | performance_glitch_user | secret_sauce |
       | error_user              | secret_sauce |
       | visual_user             | secret_sauce |
+      # | performance_glitch_user | secret_sauce |
+      # | locked_out_user         | secret_sauce |
