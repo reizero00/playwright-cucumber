@@ -1,5 +1,5 @@
 # Easy Playwright Cucumber
----
+
 ## Install Instructions
 
 1. Install npm `npm install -g npm`
