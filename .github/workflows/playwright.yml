@@ -19,6 +19,8 @@ jobs:
       run: npx playwright install --with-deps
     - name: Run Cucumber tests
       run: npm test
+    - name: Run Reporter generator
+      run: npm run posttest
     - uses: actions/upload-artifact@v3
       if: always()
       with:
