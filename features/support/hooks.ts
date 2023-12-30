@@ -15,10 +15,10 @@ Before(async function (this: CustomWorld) {
 });
 
 After(async function (this: CustomWorld, { pickle, result }: { pickle: any, result: any }) {
-  
+
   if (result?.status == Status.FAILED) {
-    const img = await this.page.screenshot({ path: `./test-results/screenshots/${pickle.name}.png`, type: "png"})
-    await this.attach(img, "image/png")    
+    const img = await this.page.screenshot({ path: `./test-results/screenshots/${pickle.name}.png`, type: "png" })
+    await this.attach(img, "image/png")
   }
 
   await this.page.close();
