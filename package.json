@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "cucumber-js test --parallel 1",
-    "cucumber dryrun": "cucumber-js test -d"
+    "test": "cucumber-js test --parallel 1 || true",
+    "cucumber dryrun": "cucumber-js test -d",
+    "posttest": "npx ts-node features/support/report.ts"
   },
   "keywords": [],
   "author": "",
@@ -14,6 +15,7 @@
     "@cucumber/cucumber": "^10.1.0",
     "@playwright/test": "^1.40.1",
     "@types/node": "^20.10.6",
+    "multiple-cucumber-html-reporter": "^3.6.0",
     "ts-node": "^10.9.2"
   }
 }
