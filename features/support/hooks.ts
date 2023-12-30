@@ -7,9 +7,7 @@ interface CustomWorld {
 }
 
 Before(async function (this: CustomWorld) {
-  this.browser = await playwright.chromium.launch({
-    headless: false,
-  });
+  this.browser = await playwright.chromium.launch();
 
   const context = await this.browser.newContext();
   this.page = await context.newPage();
